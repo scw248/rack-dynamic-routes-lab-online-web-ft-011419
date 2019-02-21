@@ -11,7 +11,7 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find{|s| s.name == item_name}
       
-      if item
+      if @@items[item]
         item.price
       else
         resp.write "Item not found"
